@@ -63,8 +63,8 @@ nvim_tree.setup({
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
-    full_name = false,
-    highlight_opened_files = "none",
+    full_name = true,
+    highlight_opened_files = "all",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
