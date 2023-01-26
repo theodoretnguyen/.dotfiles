@@ -86,6 +86,9 @@ packer.startup(function(use)
   -- Automatic highlighting (using LSP, treesitter, or regex matching)
   use("RRethy/vim-illuminate")
 
+  -- [[ Git ]]
+  use({"lewis6991/gitsigns.nvim"})
+
   -- [[ Extra Functionality ]]
   -- Surround objects
   use("kylechui/nvim-surround")
