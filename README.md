@@ -62,6 +62,7 @@
 - fzf
 - tree
 - tldr
+- lazygit
 
 ### Tiling Window Manager
 
