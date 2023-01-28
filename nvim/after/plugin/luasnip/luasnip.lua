@@ -32,5 +32,10 @@ luasnip.config.set_config({
 -- [[ Sources ]]
 require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/after/plugin/luasnip/luasnippets/" })
 
+-- [[ Include html snippets in js/jsx/tsx ]]
+luasnip.filetype_extend("javascript", {"html"})
+luasnip.filetype_extend("javascriptreact", {"html"})
+luasnip.filetype_extend("typescriptreact", {"html"})
+
 -- [[ VSCode-like Snippets ]]
 require("luasnip.loaders.from_vscode").lazy_load()
