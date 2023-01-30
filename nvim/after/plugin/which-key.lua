@@ -12,6 +12,7 @@ which_key.register({
   c = "Make",
   m = "Markdown",
   h = "Harpoon",
+  g = "Git",
   y = "which_key_ignore",
   d = "which_key_ignore",
   C = "Cellular Automaton",
