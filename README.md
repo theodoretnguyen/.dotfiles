@@ -229,6 +229,7 @@
 
 > Useful resources and guides that helped me build my config:
 > - [0 to LSP : Neovim RC From Scratch by ThePrimeagen](https://www.youtube.com/watch?v=w7i4amO_zaE)
+> - [Effective Neovim: Instant IDE by TJ DeVries](https://www.youtube.com/watch?v=stqUbv-5u2s)
 > - [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide by Josean Martinez](https://www.youtube.com/watch?v=vdn_pKJUda8)
 > - [Neovim IDE from Scratch by chris@machine](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 > - [Configuring NeoVim for Academic Writing by benbrastmckie](https://www.youtube.com/playlist?list=PLBYZ1xfnKeDT0LWxQQma8Yh-IfpmQ7UHr)
