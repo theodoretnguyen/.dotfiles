@@ -172,4 +172,4 @@ catppuccin.setup({
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
-pcall(vim.cmd, "colorscheme kanagawa")
+pcall(vim.cmd, "colorscheme nightfly")

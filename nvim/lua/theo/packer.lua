@@ -40,18 +40,21 @@ packer.startup(function(use)
 
   -- [[ Colorschemes ]]
   use({
-    -- "bluz71/vim-nightfly-colors",
-    -- "bluz71/vim-moonfly-colors",
-    -- "sainnhe/edge",
-    -- "sainnhe/sonokai",
-    -- "sainnhe/gruvbox-material",
-    -- "sainnhe/everforest",
+    -- Colorschemes that have a setup function
     "folke/tokyonight.nvim",
     "rebelot/kanagawa.nvim",
     "cpea2506/one_monokai.nvim",
     "rmehri01/onenord.nvim",
     "rose-pine/neovim",
     "catppuccin/nvim",
+
+    -- Colorschemes that don't have a setup function
+    "bluz71/vim-nightfly-colors",
+    "bluz71/vim-moonfly-colors",
+    "sainnhe/edge",
+    "sainnhe/sonokai",
+    "sainnhe/gruvbox-material",
+    "sainnhe/everforest",
   })
 
   -- [[ File Explorer ]]
