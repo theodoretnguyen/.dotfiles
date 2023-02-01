@@ -99,6 +99,8 @@ packer.startup(function(use)
   use("numToStr/Comment.nvim")
   -- Terminal
   use("akinsho/toggleterm.nvim")
+  -- Colorizer
+  use("NvChad/nvim-colorizer.lua")
 
   -- [[ Niceties ]]
   -- Indentation guides
