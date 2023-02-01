@@ -31,8 +31,9 @@ nvim_tree.setup({
   remove_keymaps = false,
   select_prompts = false,
   view = {
-    adaptive_size = false,
     centralize_selection = false,
+    cursorline = true,
+    debounce_delay = 15,
     width = 30,
     hide_root_folder = false,
     side = "left",
@@ -81,6 +82,7 @@ nvim_tree.setup({
     icons = {
       webdev_colors = true,
       git_placement = "before",
+      modified_placement = "after",
       padding = " ",
       symlink_arrow = " ➛ ",
       show = {
@@ -88,6 +90,7 @@ nvim_tree.setup({
         folder = true,
         folder_arrow = true,
         git = true,
+        modified = true,
       },
       glyphs = {
         default = "",
@@ -123,7 +126,6 @@ nvim_tree.setup({
   },
   update_focused_file = {
     enable = false,
-    debounce_delay = 15,
     update_root = false,
     ignore_list = {},
   },
@@ -166,6 +168,11 @@ nvim_tree.setup({
     show_on_dirs = true,
     show_on_open_dirs = true,
     timeout = 400,
+  },
+  modified = {
+    enable = true,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
   },
   actions = {
     use_system_clipboard = true,
