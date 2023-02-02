@@ -109,6 +109,7 @@
 
 ### Browsers
 
+- min
 - brave-browser
 - google-chrome
 
