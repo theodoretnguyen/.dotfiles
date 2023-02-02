@@ -82,7 +82,7 @@ return {
   ),
 
   -- for-loop
-  s({ trig = "for", regTrig = false, wordTrig = true, snippetType = "snippet" },
+  s({ trig = "frl", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     for (<>; <>; <>) {
         <>
@@ -99,7 +99,7 @@ return {
   ),
 
   -- while-loop
-  s({ trig = "while", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
+  s({ trig = "wll", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     while (<>) {
         <>
@@ -114,7 +114,7 @@ return {
   ),
 
   -- do-while-loop
-  s({ trig = "ddw", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
+  s({ trig = "dwl", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     do {
         <>
