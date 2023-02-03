@@ -106,6 +106,7 @@
 - nvm
 	- `npm install —g neovim`
 	- `npm install -g markmap-cli`
+  - `npm install -g live-server`
 
 ### Browsers
 
