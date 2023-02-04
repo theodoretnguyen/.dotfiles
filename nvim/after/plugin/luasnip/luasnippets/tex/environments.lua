@@ -199,6 +199,30 @@ return {
     { condition = line_begin }
   ),
 
+  -- Devotion
+  s({ trig = "dvo", regTrig = false, snippetType = "autosnippet" },
+    fmta([[
+    \begin{frame}{<>}{<>}
+        \begin{center}
+            <>
+
+            <>
+        \end{center}
+    \end{frame}
+    \begin{frame}{}{}
+        <>
+    \end{frame}
+    ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+        rep(2),
+        i(0),
+      }),
+    { condition = line_begin }
+  ),
+
   -- Inline Math
   s({ trig = "mm", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta(
