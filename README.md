@@ -55,6 +55,10 @@
 
 - neovim
 
+### Key Mapper
+
+- karabiner-elements
+
 ### CLI Utilities
 
 - ripgrep
