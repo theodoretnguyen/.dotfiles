@@ -128,7 +128,7 @@ mason.setup()
 
 -- Enable the following language servers
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "clangd",
   "texlab",
   "jdtls",
@@ -136,6 +136,7 @@ local servers = {
   "html",
   "cssls",
   "tsserver",
+  "psalm",
 }
 
 -- Ensure the servers above are installed
@@ -162,7 +163,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
