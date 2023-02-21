@@ -48,7 +48,7 @@ gitsigns.setup({
   },
 
   -- [[ Keymaps ]]
-  on_attach = function(buffer)
+  on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
     local function map(mode, l, r, desc)
