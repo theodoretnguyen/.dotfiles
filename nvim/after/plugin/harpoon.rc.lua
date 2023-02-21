@@ -1,8 +1,5 @@
--- [[ Imports ]]
-local harpoon_setup, harpoon = pcall(require, "harpoon")
-if not harpoon_setup then
-  return
-end
+local setup, harpoon = pcall(require, "harpoon")
+if (not setup) then return end
 
 -- [[ Keymaps ]]
 local mark = require("harpoon.mark")
@@ -18,11 +15,4 @@ vim.keymap.set("n", "<leader>hp", ui.nav_prev, { silent = true, desc = "Prev Fil
 vim.keymap.set("n", "<leader>hn", ui.nav_next, { silent = true, desc = "Next File"})
 
 -- [[ Configuration ]]
-harpoon.setup({
-  save_on_toggle = false,
-  save_on_change = true,
-  enter_on_sendcmd = false,
-  tmux_autoclose_windows = false,
-  excluded_filetypes = { "harpoon" },
-  mark_branch = false,
-})
+harpoon.setup({})

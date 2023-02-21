@@ -1,8 +1,5 @@
--- [[ Imports ]]
-local togglecheck_setup, togglecheck = pcall(require, "markdown-togglecheck")
-if not togglecheck_setup then
-  return
-end
+local setup, togglecheck = pcall(require, "markdown-togglecheck")
+if (not setup) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>mm",

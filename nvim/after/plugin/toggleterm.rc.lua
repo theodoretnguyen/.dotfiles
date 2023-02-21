@@ -1,8 +1,5 @@
--- [[ Imports ]]
-local toggleterm_setup, toggleterm = pcall(require, "toggleterm")
-if not toggleterm_setup then
-  return
-end
+local setup, toggleterm = pcall(require, "toggleterm")
+if (not setup) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
@@ -10,6 +7,7 @@ vim.keymap.set("t", "<c-h>", [[<cmd>wincmd h<cr>]])
 vim.keymap.set("t", "<c-j>", [[<cmd>wincmd j<cr>]])
 vim.keymap.set("t", "<c-k>", [[<cmd>wincmd k<cr>]])
 vim.keymap.set("t", "<c-l>", [[<cmd>wincmd l<cr>]])
+vim.keymap.set("", "<c-\\>", [[<cmd>ToggleTerm<cr>]])
 
 -- [[ Configuration ]]
 toggleterm.setup({
@@ -33,7 +31,7 @@ toggleterm.setup({
   direction = "float",
   close_on_exit = true,
   float_opts = {
-    border = "single",
+    border = "rounded",
     winblend = 0,
   },
 })

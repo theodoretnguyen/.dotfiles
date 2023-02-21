@@ -1,12 +1,6 @@
--- [[ Imports ]]
-local zen_mode_setup, zen_mode = pcall(require, "zen-mode")
-if not zen_mode_setup then
-  return
-end
-local twilight_setup, twilight = pcall(require, "twilight")
-if not twilight_setup then
-  return
-end
+local setup, zen_mode = pcall(require, "zen-mode")
+if (not setup) then return end
+local twilight = require("twilight")
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Zen Mode" })
@@ -33,29 +27,8 @@ zen_mode.setup({
       ruler = false,
       showcmd = false,
     },
-    twilight = { enabled = false },
+    twilight = { enabled = true },
     gitsigns = { enabled = false },
-    tmux = { enabled = false },
-    kitty = {
-      enabled = true,
-      font = "+4",
-    },
   },
 })
-twilight.setup({
-  dimming = {
-    alpha = 0.25,
-    color = { "Normal", "#ffffff" },
-    term_bg = "#000000",
-    inactive = false,
-  },
-  context = 10,
-  treesitter = true,
-  expand = {
-    "function",
-    "method",
-    "table",
-    "if_statement",
-  },
-  exclude = {},
-})
+twilight.setup({})

@@ -1,8 +1,5 @@
--- [[ Imports ]]
-local luasnip_setup, luasnip = pcall(require, "luasnip")
-if not luasnip_setup then
-  return
-end
+local setup, luasnip = pcall(require, "luasnip")
+if (not setup) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>S",
@@ -38,4 +35,4 @@ luasnip.filetype_extend("javascriptreact", {"html"})
 luasnip.filetype_extend("typescriptreact", {"html"})
 
 -- [[ VSCode-like Snippets ]]
-require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()

@@ -1,20 +1,27 @@
--- [[ Imports ]]
-local treesitter_setup, _ = pcall(require, "nvim-treesitter")
-if not treesitter_setup then
-  return
-end
+local setup, ts = pcall(require, "nvim-treesitter.configs")
+if (not setup) then return end
 
 -- [[ Configuration ]]
--- See `:help nvim-treesitter`
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "lua", "vim", "help", "cpp", "java", "make", "markdown", "html", "javascript" },
-
-  -- -- Autotag taken care of by nvim-ts-autotag plugin
-  -- autotag = {
-  --   enable = true,
-  -- },
-  highlight = { enable = true },
-  indent = { enable = true },
+ts.setup({
+  ensure_installed = {
+    "lua",
+    "vim",
+    "help",
+    "make",
+    "cpp",
+    "java",
+    "markdown",
+    "html",
+    "css",
+    "javascript",
+    "php"
+  },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -58,7 +65,7 @@ require("nvim-treesitter.configs").setup({
       },
     },
     swap = {
-      enable = true,
+      enable = false,
       swap_next = {
         ["<leader>a"] = "@parameter.inner",
       },

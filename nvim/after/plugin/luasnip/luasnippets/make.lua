@@ -1,8 +1,5 @@
--- [[ Imports ]]
-local luasnip_setup, ls = pcall(require, "luasnip")
-if not luasnip_setup then
-	return
-end
+local setup, ls = pcall(require, "luasnip")
+if (not setup) then return end
 
 -- [[ Luasnip Abbreviations ]]
 local s = ls.snippet
