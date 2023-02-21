@@ -1,37 +1,38 @@
 # Config Files
 
 <!--toc:start-->
-## Table of Contents
-
-- [Fonts](#fonts)
-- [Shell](#shell)
-- [Homebrew Formulae and Casks](#homebrew-formulae-and-casks)
-- [Neovim Plugins](#neovim-plugins)
-  - [Plugin Manager](#plugin-manager)
-  - [Main Colorscheme](#main-colorscheme)
-  - [File Explorer](#file-explorer)
-  - [Fuzzy Finder](#fuzzy-finder)
-  - [Quick File Navigation](#quick-file-navigation)
-  - [Treesitter](#treesitter)
-  - [Extra Functionality](#extra-functionality)
-  - [Niceties](#niceties)
-  - [Autocompletion](#autocompletion)
-  - [LSP](#lsp)
-  - [Markup](#markup)
-  - [Other](#other)
+- [Config Files](#config-files)
+  - [Shell](#shell)
+  - [Homebrew Formulae and Casks](#homebrew-formulae-and-casks)
+    - [Fonts](#fonts)
+    - [Terminals](#terminals)
+    - [Text Editor](#text-editor)
+    - [Terminal Multiplexer](#terminal-multiplexer)
+    - [Key Mapper](#key-mapper)
+    - [CLI Utilities](#cli-utilities)
+    - [Tiling Window Manager](#tiling-window-manager)
+    - [PDF Viewers](#pdf-viewers)
+    - [Other Utilities](#other-utilities)
+    - [conda](#conda)
+    - [Dev](#dev)
+    - [Browsers](#browsers)
+    - [Socials](#socials)
+    - [Music Player](#music-player)
+    - [Extras](#extras)
+  - [Neovim Plugins](#neovim-plugins)
+      - [Plugin Manager](#plugin-manager)
+      - [Main Colorscheme](#main-colorscheme)
+      - [File Explorer](#file-explorer)
+      - [Fuzzy Finder](#fuzzy-finder)
+      - [Quick File Navigation](#quick-file-navigation)
+      - [Treesitter](#treesitter)
+      - [Extra Functionality](#extra-functionality)
+      - [Niceties](#niceties)
+      - [Autocompletion](#autocompletion)
+      - [LSP](#lsp)
+      - [Markup](#markup)
+      - [Other](#other)
 <!--toc:end-->
-
-
-## Fonts
-
-- Fira Mono
-- Fira Sans
-- FiraCode Nerd Font
-- FiraCode Nerd Font Mono
-- Hack Nerd Font
-- Hack Nerd Font Mono
-- MesloLGM Nerd Font
-- MesloLGM Nerd Font Mono
 
 ## Shell
 
@@ -46,6 +47,14 @@
 
 ## Homebrew Formulae and Casks
 
+### Fonts
+
+- `brew tap homebrew/cask-fonts`
+  - `brew install --cask font-fira-code-nerd-font`
+  - `brew install --cask font-iosevka-nerd-font`
+  - `brew install --cask font-victor-mono-nerd-font`
+  - `brew install --cask font-jetbrains-mono-nerd-font`
+
 ### Terminals
 
 - alacritty
@@ -55,15 +64,22 @@
 
 - neovim
 
+### Terminal Multiplexer
+
+- tmux
+
 ### Key Mapper
 
-- karabiner-elements
+- hammerspoon
+  - [jasonrudolph/ControlEscape.spoon](https://github.com/jasonrudolph/ControlEscape.spoon)
 
 ### CLI Utilities
 
 - ripgrep
 - fd
 - fzf
+- exa
+- dos2unix
 - tree
 - tldr
 - lazygit
@@ -107,7 +123,7 @@
 - gcc
 - make
 - java
-- nvm
+- fnm
 	- `npm install —g neovim`
 	- `npm install -g markmap-cli`
   - `npm install -g live-server`
@@ -140,31 +156,40 @@
 
 #### Plugin Manager
 
-  - [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 #### Main Colorscheme
 
-  - [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
 
 #### File Explorer
 
-  - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-  - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 
 #### Fuzzy Finder
 
-  - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-  - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 #### Quick File Navigation
 
-  - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
+- [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 
 #### Treesitter
 
-  - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  - [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-  - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+
+#### Git
+
+- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+
+#### Navigation
+
+- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [knubie/vim-kitty-navigator](https://github.com/knubie/vim-kitty-navigator)
 
 #### Extra Functionality
 
@@ -186,6 +211,8 @@
   - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - Bufferline
   - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- Winbar
+  - [utilyre/barbecue.nvim](https://github.com/utilyre/barbecue.nvim)
 - Which-key
   - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - Pretty Diagnostics
@@ -242,4 +269,4 @@
 
 
 [^snippets]: $\LaTeX{}$ snippets heavily inspired by [Elijan Mastnak's snippets](https://github.com/ejmastnak/dotfiles/tree/main/config/nvim/LuaSnip/tex)
-[^vimtex]: Vimtex setup inspired by [Elijan Mastnak's guide](https://ejmastnak.github.io/tutorials/vim-latex/intro.html) and [Gilles Castel's blog](https://castel.dev/post/lecture-notes-1/)
+[^vimtex]: Vimtex setup inspired by [Elijan Mastnak's guide](https://www.ejmastnak.com/tutorials/vim-latex/intro/) and [Gilles Castel's blog](https://castel.dev/post/lecture-notes-1/)
