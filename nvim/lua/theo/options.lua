@@ -1,6 +1,8 @@
 -- General
 vim.o.compatible = false
 vim.o.encoding = "utf-8"
+vim.scriptencoding = "utf-8"
+vim.o.fileencoding = "utf-8"
 vim.o.title = true
 vim.o.mouse = "a"
 vim.o.guioptions = a
@@ -15,6 +17,7 @@ vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
+vim.o.winblend = 0
 
 vim.o.hidden = true
 
@@ -22,10 +25,13 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.showtabline = 2
 vim.o.showcmd = false
+vim.o.cmdheight = 1
+vim.o.laststatus = 3
 vim.o.showmode = false
 
 vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.path:append { "**" }
 
 vim.opt.clipboard = ""
 
@@ -35,19 +41,21 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.signcolumn = "yes"
-vim.o.scrolloff = 8
+vim.o.scrolloff = 10
 
 -- Tab/Wrap
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
+vim.o.smarttab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.textwidth = 0
 vim.o.colorcolumn = "80"
 vim.o.linebreak = false
 vim.o.wrap = false
+vim.o.breakindent = false
 
 -- Cursor line
 vim.o.cursorline = false

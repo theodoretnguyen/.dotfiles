@@ -1,4 +1,4 @@
--- Automatically deletes all trailing whitespace and newlines at end of file on save & reset cursor position
+-- Automatically delete all trailing whitespace and newlines at end of file on save & reset cursor position
 local trimWhiteSpace = vim.api.nvim_create_augroup("trimWhiteSpace", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = trimWhiteSpace,
@@ -39,7 +39,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Highlight on yank
--- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()

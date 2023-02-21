@@ -1,4 +1,5 @@
 require("theo.options")
 require("theo.keymaps")
 require("theo.autocmd")
+require("theo.colorscheme")
 require("theo.packer")
