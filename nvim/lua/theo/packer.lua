@@ -19,13 +19,10 @@ if packer_bootstrap then
   print("==================================")
 end
 
--- [[ Imports ]]
-local packer_installed, packer = pcall(require, "packer")
-if not packer_installed then
-  return
-end
+local status, packer = pcall(require, "packer")
+if (not status) then return end
 
--- Automatically source and re-compile packer whenever you save this init.lua
+-- Automatically source and re-compile packer whenever you save this packer.lua
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
   command = "source <afile> | PackerSync",
@@ -40,38 +37,21 @@ packer.startup(function(use)
 
   -- [[ Colorschemes ]]
   use({
-    -- Colorschemes that have a setup function
     "folke/tokyonight.nvim",
     "rebelot/kanagawa.nvim",
-    "cpea2506/one_monokai.nvim",
-    "rmehri01/onenord.nvim",
-    "rose-pine/neovim",
-    "catppuccin/nvim",
-
-    -- Colorschemes that don't have a setup function
-    "bluz71/vim-nightfly-colors",
-    "bluz71/vim-moonfly-colors",
-    "sainnhe/edge",
-    "sainnhe/sonokai",
-    "sainnhe/gruvbox-material",
-    "sainnhe/everforest",
   })
 
   -- [[ File Explorer ]]
   use({
     "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    requires = { "nvim-tree/nvim-web-devicons" },
   })
 
   -- [[ Fuzzy Finder ]]
   use({
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
+    requires = { "nvim-lua/plenary.nvim" },
   })
 
   -- [[ Quick File Navigation ]]
@@ -85,12 +65,23 @@ packer.startup(function(use)
     end,
   })
   -- Additional text objects via treesitter
-  use("nvim-treesitter/nvim-treesitter-textobjects")
-  -- Automatic highlighting (using LSP, treesitter, or regex matching)
-  use("RRethy/vim-illuminate")
+  use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = { "nvim-treesitter" },
+    requires = { "nvim-treesitter/nvim-treesitter" },
+  })
 
   -- [[ Git ]]
   use({"lewis6991/gitsigns.nvim"})
+
+  -- [[ Navigation ]]
+  -- tmux
+  use({"christoomey/vim-tmux-navigator", disable = true})
+  -- kitty
+  use({
+    "knubie/vim-kitty-navigator",
+    run = "cp ./*.py ~/.config/kitty/",
+  })
 
   -- [[ Extra Functionality ]]
   -- Surround objects
@@ -107,19 +98,32 @@ packer.startup(function(use)
 
   -- [[ Niceties ]]
   -- Indentation guides
-  use("lukas-reineke/indent-blankline.nvim")
+  use({"lukas-reineke/indent-blankline.nvim", disable = true})
   -- Statusline
   use("nvim-lualine/lualine.nvim")
   -- Bufferline
-  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = { "nvim-tree/nvim-web-devicons" } })
+  -- Winbar
+  use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    after = "nvim-web-devicons",
+  })
   -- Which-key
   use("folke/which-key.nvim")
   -- Pretty Diagnostics
-  use("folke/trouble.nvim")
+  use({
+    "folke/trouble.nvim",
+    require = { "nvim-tree/nvim-web-devicons" },
+  })
   -- Zen
   use({
     "folke/zen-mode.nvim",
-    "folke/twilight.nvim",
+    requires = { "folke/twilight.nvim" },
   })
 
   -- [[ Autocompletion ]]
@@ -168,7 +172,7 @@ packer.startup(function(use)
     ft = { "markdown" },
   })
   -- Toggle Checklist
-  use({ "NFrid/markdown-togglecheck", requires = "NFrid/treesitter-utils" })
+  use({ "NFrid/markdown-togglecheck", requires = { "NFrid/treesitter-utils" } })
 
   -- [[ Other ]]
   use("eandrju/cellular-automaton.nvim")
