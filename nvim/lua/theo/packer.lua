@@ -30,6 +30,16 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "packer.lua",
 })
 
+packer.init({
+  display = {
+    open_fn = function()
+      return require("packer.util").float({
+        border = "rounded",
+      })
+    end,
+  },
+})
+
 -- [[ Install plugins ]]
 packer.startup(function(use)
   -- [[ Package Manager ]]
@@ -41,140 +51,152 @@ packer.startup(function(use)
     "rebelot/kanagawa.nvim",
   })
 
-  -- [[ File Explorer ]]
+  -- [[ File Navigation ]]
   use({
-    "nvim-tree/nvim-tree.lua",
-    requires = { "nvim-tree/nvim-web-devicons" },
+    {
+      "nvim-tree/nvim-tree.lua",
+      requires = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+      "nvim-telescope/telescope.nvim",
+      branch = "0.1.x",
+      requires = { "nvim-lua/plenary.nvim" },
+    },
+    { "ThePrimeagen/harpoon" }
   })
-
-  -- [[ Fuzzy Finder ]]
-  use({
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    requires = { "nvim-lua/plenary.nvim" },
-  })
-
-  -- [[ Quick File Navigation ]]
-  use("ThePrimeagen/harpoon")
 
   -- [[ Treesitter ]]
   use({
-    "nvim-treesitter/nvim-treesitter",
-    run = function()
-      pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-    end,
-  })
-  -- Additional text objects via treesitter
-  use({
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    after = { "nvim-treesitter" },
-    requires = { "nvim-treesitter/nvim-treesitter" },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      run = function()
+        pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+      end,
+    },
+    -- Additional text objects via treesitter
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      after = { "nvim-treesitter" },
+      requires = { "nvim-treesitter/nvim-treesitter" },
+    },
   })
 
   -- [[ Git ]]
-  use({"lewis6991/gitsigns.nvim"})
+  use("lewis6991/gitsigns.nvim")
 
   -- [[ Navigation ]]
-  -- tmux
-  use({"christoomey/vim-tmux-navigator", disable = true})
-  -- kitty
   use({
-    "knubie/vim-kitty-navigator",
-    run = "cp ./*.py ~/.config/kitty/",
+    { "christoomey/vim-tmux-navigator", disable = true }, -- tmux
+    {
+      "knubie/vim-kitty-navigator", -- kitty
+      run = "cp ./*.py ~/.config/kitty/",
+    },
   })
 
   -- [[ Extra Functionality ]]
-  -- Surround objects
-  use("kylechui/nvim-surround")
-  -- Auto-closing
-  use("windwp/nvim-autopairs")
-  use("windwp/nvim-ts-autotag")
-  -- Comments
-  use("numToStr/Comment.nvim")
-  -- Terminal
-  use("akinsho/toggleterm.nvim")
-  -- Colorizer
-  use("NvChad/nvim-colorizer.lua")
+  use({
+    "kylechui/nvim-surround", -- surround objects
+    "windwp/nvim-autopairs", -- auto-close delimiters
+    {
+      "windwp/nvim-ts-autotag", -- auto-close tags
+      after = { "nvim-treesitter" },
+    },
+    "numToStr/Comment.nvim", -- comments
+    "akinsho/toggleterm.nvim", -- terminal
+    "NvChad/nvim-colorizer.lua", -- colorizer
+  })
 
   -- [[ Niceties ]]
-  -- Indentation guides
-  use({"lukas-reineke/indent-blankline.nvim", disable = true})
-  -- Statusline
-  use("nvim-lualine/lualine.nvim")
-  -- Bufferline
-  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = { "nvim-tree/nvim-web-devicons" } })
-  -- Winbar
   use({
-    "utilyre/barbecue.nvim",
-    tag = "*",
-    requires = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
+    {
+      "lukas-reineke/indent-blankline.nvim", -- indentation guides
+      disable = false,
     },
-    after = "nvim-web-devicons",
-  })
-  -- Which-key
-  use("folke/which-key.nvim")
-  -- Pretty Diagnostics
-  use({
-    "folke/trouble.nvim",
-    require = { "nvim-tree/nvim-web-devicons" },
-  })
-  -- Zen
-  use({
-    "folke/zen-mode.nvim",
-    requires = { "folke/twilight.nvim" },
+    { "nvim-lualine/lualine.nvim" }, -- statusline
+    {
+      "akinsho/bufferline.nvim", -- bufferline
+      tag = "v3.*",
+      requires = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+      "utilyre/barbecue.nvim", -- winbar
+      tag = "*",
+      requires = {
+        "SmiteshP/nvim-navic",
+        "nvim-tree/nvim-web-devicons",
+      },
+      after = "nvim-web-devicons",
+    },
+    { "folke/which-key.nvim" }, -- which-key
+    {
+      "folke/trouble.nvim", -- pretty Diagnostics
+      require = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+      "folke/zen-mode.nvim", -- zen
+      requires = { "folke/twilight.nvim" },
+    },
   })
 
   -- [[ Autocompletion ]]
   use({
     "hrsh7th/nvim-cmp",
-    -- [[ Sources ]]
-    -- sourceName : description
+    -- sources
     "hrsh7th/cmp-nvim-lsp", -- nvim_lsp : LSP source
     "saadparwaiz1/cmp_luasnip", -- luasnip : snippets source
+    "hrsh7th/cmp-nvim-lua", -- nvim_lua : neovim's lua api
     "hrsh7th/cmp-buffer", -- buffer : buffer source
     "hrsh7th/cmp-path", -- path : filesystem paths source
     "hrsh7th/cmp-cmdline", -- cmdline : command line suggestions
-    -- [[ Kind Icons ]]
+    -- kind icons
     "onsails/lspkind.nvim",
-    -- [[ Snippets Plugin]]
+    -- snippets plugin
     "L3MON4D3/LuaSnip",
-    -- [[ VSCode Snippets Collection ]]
+    -- vscode snippets collection
     "rafamadriz/friendly-snippets",
   })
 
   -- [[ LSP ]]
   use({
     "neovim/nvim-lspconfig",
-    -- Automatically install LSPs to stdpath for neovim
+    -- lsp installer
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    -- Useful status updates for LSP
+    -- useful status updates for LSP
     "j-hui/fidget.nvim",
-    -- Colors for diagnostics
+    {
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      requires = {
+        { "nvim-tree/nvim-web-devicons" },
+        { "nvim-treesitter/nvim-treesitter" },
+      },
+    },
+    -- colors for diagnostics
     "folke/lsp-colors.nvim",
-    -- Formatters and Linters
-    "jose-elias-alvarez/null-ls.nvim",
-    "jayp0521/mason-null-ls.nvim",
+    -- formatters and linters
+    -- "jose-elias-alvarez/null-ls.nvim",
+    -- "jayp0521/mason-null-ls.nvim",
   })
 
   -- [[ Markup ]]
-  -- VimTeX
-  use("lervag/vimtex")
-  -- Markdown Live Preview
   use({
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    "lervag/vimtex", -- LaTeX
+    {
+      "iamcco/markdown-preview.nvim", -- markdown previewer
+      run = "cd app && npm install",
+      setup = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
+    {
+      "NFrid/markdown-togglecheck", -- checkboxes
+      requires = { "NFrid/treesitter-utils" },
+    },
   })
-  -- Toggle Checklist
-  use({ "NFrid/markdown-togglecheck", requires = { "NFrid/treesitter-utils" } })
 
-  -- [[ Other ]]
+  -- [[ Miscellaneous ]]
   use("eandrju/cellular-automaton.nvim")
 
   if packer_bootstrap then
