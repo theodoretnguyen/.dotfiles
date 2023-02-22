@@ -39,10 +39,10 @@
 - oh-my-zsh
 - plugins:
   - git
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
   - web-search
   - macos
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 - ZSH_THEME: powerlevel10k
 
 ## Homebrew Formulae and Casks
@@ -53,7 +53,8 @@
   - `brew install --cask font-fira-code-nerd-font`
   - `brew install --cask font-iosevka-nerd-font`
   - `brew install --cask font-victor-mono-nerd-font`
-  - `brew install --cask font-jetbrains-mono-nerd-font`
+  - **`brew install --cask font-jetbrains-mono-nerd-font`**
+    - Can also run `./fonts/fonts.sh`
 
 ### Terminals
 
