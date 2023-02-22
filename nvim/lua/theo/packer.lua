@@ -165,7 +165,7 @@ packer.startup(function(use)
     -- useful status updates for LSP
     "j-hui/fidget.nvim",
     {
-      "glepnir/lspsaga.nvim",
+      "glepnir/lspsaga.nvim", -- extra lsp functionalities
       branch = "main",
       requires = {
         { "nvim-tree/nvim-web-devicons" },
@@ -174,9 +174,6 @@ packer.startup(function(use)
     },
     -- colors for diagnostics
     "folke/lsp-colors.nvim",
-    -- formatters and linters
-    -- "jose-elias-alvarez/null-ls.nvim",
-    -- "jayp0521/mason-null-ls.nvim",
   })
 
   -- [[ Markup ]]
