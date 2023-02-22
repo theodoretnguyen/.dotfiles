@@ -1,5 +1,5 @@
-local setup, tree = pcall(require, "nvim-tree")
-if (not setup) then return end
+local found, tree = pcall(require, "nvim-tree")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { silent = true, desc = "File Explorer" })

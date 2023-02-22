@@ -1,7 +1,6 @@
-local status, cmp = pcall(require, "cmp")
-if (not status) then return end
+local found, cmp = pcall(require, "cmp")
+if (not found) then return end
 local luasnip = require("luasnip")
-local lspkind = require("lspkind")
 
 -- [[ General Configuration ]]
 cmp.setup({
@@ -11,8 +10,8 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -24,15 +23,15 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   formatting = {
-    format = lspkind.cmp_format({
+    format = require('lspkind').cmp_format({
       mode = "symbol",
-      maxwidth = 50,
-      ellipsis_char = "...",
-    })
+      preset = "codicons",
+    }),
   },
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
+    { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
   },
@@ -47,7 +46,6 @@ cmp.setup.cmdline({ "/", "?" }, {
     { name = "buffer" },
   },
   formatting = {
-    fields = { "abbr", "kind", "menu" },
     format = function(_, vim_item)
       vim_item.kind = ""
       return vim_item
@@ -69,7 +67,6 @@ cmp.setup.cmdline(":", {
       },
   }),
   formatting = {
-    fields = { "abbr", "kind", "menu" },
     format = function(_, vim_item)
       vim_item.kind = ""
       return vim_item

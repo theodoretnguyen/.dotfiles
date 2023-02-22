@@ -1,5 +1,5 @@
-local setup, kanagawa = pcall(require, "kanagawa")
-if (not setup) then return end
+local found, kanagawa = pcall(require, "kanagawa")
+if (not found) then return end
 
 -- [[ Configuration ]]
 kanagawa.setup({

@@ -1,5 +1,5 @@
-local setup, _ = pcall(require, "cellular-automaton")
-if (not setup) then return end
+local found, _ = pcall(require, "cellular-automaton")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>Cm", "<cmd>CellularAutomaton make_it_rain<cr>", { desc = "Make it rain" })

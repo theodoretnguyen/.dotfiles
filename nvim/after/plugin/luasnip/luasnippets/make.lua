@@ -1,5 +1,5 @@
-local setup, ls = pcall(require, "luasnip")
-if (not setup) then return end
+local found, ls = pcall(require, "luasnip")
+if (not found) then return end
 
 -- [[ Luasnip Abbreviations ]]
 local s = ls.snippet

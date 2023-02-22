@@ -1,5 +1,5 @@
-local setup, bufferline = pcall(require, "bufferline")
-if (not setup) then return end
+local found, bufferline = pcall(require, "bufferline")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<s-l>", "<cmd>BufferLineCycleNext<cr>", { silent = true })

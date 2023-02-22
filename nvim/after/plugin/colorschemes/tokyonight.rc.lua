@@ -1,5 +1,5 @@
-local setup, tokyonight = pcall(require, "tokyonight")
-if (not setup) then return end
+local found, tokyonight = pcall(require, "tokyonight")
+if (not found) then return end
 
 -- [[ Configuration ]]
 tokyonight.setup({

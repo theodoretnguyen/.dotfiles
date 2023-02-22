@@ -1,5 +1,5 @@
-local setup, harpoon = pcall(require, "harpoon")
-if (not setup) then return end
+local found, harpoon = pcall(require, "harpoon")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 local mark = require("harpoon.mark")

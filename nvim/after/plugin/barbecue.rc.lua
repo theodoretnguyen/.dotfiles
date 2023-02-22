@@ -1,6 +1,4 @@
-local status, bbq = pcall(require, "barbecue")
-if (not status) then return end
+local found, bbq = pcall(require, "barbecue")
+if (not found) then return end
 
 bbq.setup({})
-
-require("barbecue")

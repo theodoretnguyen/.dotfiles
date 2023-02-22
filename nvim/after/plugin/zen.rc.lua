@@ -1,5 +1,5 @@
-local setup, zen_mode = pcall(require, "zen-mode")
-if (not setup) then return end
+local found, zen_mode = pcall(require, "zen-mode")
+if (not found) then return end
 local twilight = require("twilight")
 
 -- [[ Keymaps ]]

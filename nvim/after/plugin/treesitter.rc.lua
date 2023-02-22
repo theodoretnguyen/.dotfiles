@@ -1,5 +1,5 @@
-local setup, ts = pcall(require, "nvim-treesitter.configs")
-if (not setup) then return end
+local found, ts = pcall(require, "nvim-treesitter.configs")
+if (not found) then return end
 
 -- [[ Configuration ]]
 ts.setup({
@@ -11,6 +11,7 @@ ts.setup({
     "cpp",
     "java",
     "markdown",
+    "markdown_inline",
     "html",
     "css",
     "javascript",
@@ -74,4 +75,4 @@ ts.setup({
       },
     },
   },
-})
+  })

@@ -1,5 +1,5 @@
-local setup, colorizer = pcall(require, "colorizer")
-if (not setup) then return end
+local found, colorizer = pcall(require, "colorizer")
+if (not found) then return end
 
 -- [[ Configuration ]]
 colorizer.setup({

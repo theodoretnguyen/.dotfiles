@@ -1,5 +1,5 @@
-local setup, toggleterm = pcall(require, "toggleterm")
-if (not setup) then return end
+local found, toggleterm = pcall(require, "toggleterm")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])

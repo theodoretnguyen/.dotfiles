@@ -1,5 +1,5 @@
-local setup, telescope = pcall(require, "telescope")
-if (not setup) then return end
+local found, telescope = pcall(require, "telescope")
+if (not found) then return end
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
 

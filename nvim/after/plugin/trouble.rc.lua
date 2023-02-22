@@ -1,5 +1,5 @@
-local setup, trouble = pcall(require, "trouble")
-if (not setup) then return end
+local found, trouble = pcall(require, "trouble")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Toggle" })
@@ -14,5 +14,5 @@ trouble.setup({
   auto_close = true,
   auto_preview = true,
   auto_fold = false,
-  use_diagnostic_signs = false,
+  use_diagnostic_signs = true,
 })

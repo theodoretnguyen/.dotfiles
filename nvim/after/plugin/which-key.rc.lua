@@ -1,5 +1,5 @@
-local setup, whichkey = pcall(require, "which-key")
-if (not setup) then return end
+local found, whichkey = pcall(require, "which-key")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 whichkey.register({
@@ -9,7 +9,7 @@ whichkey.register({
   c = { name = "Make"},
   m = { name = "Markdown"},
   h = { name = "Harpoon"},
-  g = { name = "Git" },
+  G = { name = "Git" },
   x = { name = "Trouble" },
   y = { name = "which_key_ignore" },
   d = { name = "which_key_ignore" },

@@ -1,5 +1,5 @@
-local setup, npairs = pcall(require, "nvim-autopairs")
-if (not setup) then return end
+local found, npairs = pcall(require, "nvim-autopairs")
+if (not found) then return end
 
 -- [[ Configuration ]]
 npairs.setup({

@@ -1,5 +1,5 @@
-local setup, luasnip = pcall(require, "luasnip")
-if (not setup) then return end
+local found, luasnip = pcall(require, "luasnip")
+if (not found) then return end
 
 -- [[ Keymaps ]]
 vim.keymap.set("n", "<leader>S",
