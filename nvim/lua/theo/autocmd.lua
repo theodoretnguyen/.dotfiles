@@ -25,15 +25,35 @@ autocmd({ 'BufWritePre' }, {
 })
 
 -- Vertically center document when entering insert mode
--- autocmd({ "InsertEnter" }, {
---   pattern = { "*" },
---   command = "norm zz",
--- })
+autocmd({ "InsertEnter" }, {
+  pattern = { "*" },
+  command = "norm zz",
+})
 
 -- Disable automatic commenting on newline
 autocmd({ "FileType" }, {
   pattern = { "*" },
   command = "setlocal formatoptions-=cro",
+})
+
+-- tex
+autocmd('FileType', {
+  pattern = { 'tex' },
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+    vim.o.smarttab = true
+    vim.bo.autoindent = true
+    vim.bo.smartindent = true
+    vim.bo.textwidth = 0
+    vim.wo.colorcolumn = ""
+    vim.wo.linebreak = true
+    vim.wo.wrap = true
+    vim.o.breakindent = true
+    vim.wo.conceallevel = 0
+  end,
 })
 
 -- cpp

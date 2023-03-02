@@ -7,7 +7,7 @@ return {
       { "j-hui/fidget.nvim", config = true },
     },
     config = function()
-      -- Diagnostics
+      -- [[ Diagnostics ]]
       local sign = function(opts)
         vim.fn.sign_define(opts.name, {
           texthl = opts.name,
@@ -40,7 +40,7 @@ return {
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev Diagnostic" })
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 
-      -- LSP keymaps
+      -- [[ LSP keymaps ]]
       local on_attach = function(_, bufnr)
         local nmap = function(keys, func, desc)
           vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
@@ -74,7 +74,7 @@ return {
         )
       end
 
-      -- LSP servers
+      -- [[ LSP servers ]]
       local servers = {
         clangd = {},
         jdtls = {},
@@ -97,12 +97,11 @@ return {
         },
       }
 
-      -- Capabilities
+      -- [[ Capabilities ]]
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-      -- Set up servers
-      -- require("mason").setup({})
+      -- [[ Set up servers ]]
       require("mason-lspconfig").setup({
         ensure_installed = vim.tbl_keys(servers),
       })
@@ -117,4 +116,20 @@ return {
       })
     end,
   },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons", enabled = false },
+    keys = {
+      { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle"  },
+      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
+      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics"  },
+      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",  desc = "Quickfix List"  },
+    },
+    opts = {
+      auto_close = true,
+      auto_preview = true,
+      auto_fold = false,
+      use_diagnostic_signs = true,
+    },
+  }
 }

@@ -46,11 +46,11 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- Netrw
-vim.keymap.set('n', '<leader>e', vim.cmd.Lex )
+-- vim.keymap.set('n', '<leader>e', '<cmd>Lexplore<cr>', { desc = "File Explorer" } )
 
 -- Buffers
-vim.keymap.set('n', '<tab>', vim.cmd.bnext )
-vim.keymap.set('n', '<s-tab>', vim.cmd.bprevious )
+vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>')
+vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>')
 
 -- Tabs
 vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New' } )
@@ -67,6 +67,13 @@ vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
+
+-- Terminals
+vim.keymap.set("t", "<esc>", [[<c-\><c-n>]])
+vim.keymap.set("t", "<c-h>", [[<cmd>wincmd h<cr>]])
+vim.keymap.set("t", "<c-j>", [[<cmd>wincmd j<cr>]])
+vim.keymap.set("t", "<c-k>", [[<cmd>wincmd k<cr>]])
+vim.keymap.set("t", "<c-l>", [[<cmd>wincmd l<cr>]])
 
 -- Change directory
 vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { desc = 'Change Working Directory' } )

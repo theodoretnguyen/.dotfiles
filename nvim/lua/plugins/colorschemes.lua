@@ -2,13 +2,13 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
-    -- priority = 1000,
+    lazy = false,
+    priority = 1000,
     config = function()
       require("catppuccin").setup({
         transparent_background = false,
       })
-      -- vim.cmd([[colorscheme catppuccin]])
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
   {
@@ -30,10 +30,6 @@ return {
   {
     "bluz71/vim-nightfly-colors",
     name = "nightfly",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd[[colorscheme nightfly]]
-    end,
+    lazy = true,
   },
 }
