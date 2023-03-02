@@ -1,6 +1,6 @@
 window:
   decorations: none
-  opacity: 1.00
+  opacity: 0.75
   option_as_alt: Both
 
 scrolling:
@@ -11,13 +11,7 @@ live_config_reload: true
 
 font:
   normal:
-    # family: "FiraCode Nerd Font"
-    # family: "VictorMono Nerd Font"
-    # family: "Iosevka Nerd Font"
     family: "JetBrainsMono Nerd Font"
-    # family: "SauceCodePro Nerd Font"
-    # family: "MesloLGS Nerd Font"
-    # family: "Hack Nerd Font"
   size: 18.0
 
 cursor:
@@ -27,70 +21,7 @@ cursor:
 mouse:
   hide_when_typing: false
 
-# TokyoNight Alacritty Colors
 colors:
-  # Default colors
   primary:
-    background: '#222436'
-    foreground: '#c8d3f5'
-
-  # Normal colors
-  normal:
-    black:   '#1b1d2b'
-    red:     '#ff757f'
-    green:   '#c3e88d'
-    yellow:  '#ffc777'
-    blue:    '#82aaff'
-    magenta: '#c099ff'
-    cyan:    '#86e1fc'
-    white:   '#828bb8'
-
-  # Bright colors
-  bright:
-    black:   '#444a73'
-    red:     '#ff757f'
-    green:   '#c3e88d'
-    yellow:  '#ffc777'
-    blue:    '#82aaff'
-    magenta: '#c099ff'
-    cyan:    '#86e1fc'
-    white:   '#c8d3f5'
-
-  indexed_colors:
-    - { index: 16, color: '#ff966c' }
-    - { index: 17, color: '#c53b53' }
-
-
-# Kanagawa Alacritty Colors
-# colors:
-#   primary:
-#     background: "#1f1f28"
-#     foreground: "#dcd7ba"
-#
-#   normal:
-#     black:   "#090618"
-#     red:     "#c34043"
-#     green:   "#76946a"
-#     yellow:  "#c0a36e"
-#     blue:    "#7e9cd8"
-#     magenta: "#957fb8"
-#     cyan:    "#6a9589"
-#     white:   "#c8c093"
-#
-#   bright:
-#     black:   "#727169"
-#     red:     "#e82424"
-#     green:   "#98bb6c"
-#     yellow:  "#e6c384"
-#     blue:    "#7fb4ca"
-#     magenta: "#938aa9"
-#     cyan:    "#7aa89f"
-#     white:   "#dcd7ba"
-#
-#   selection:
-#     background: "#2d4f67"
-#     foreground: "#c8c093"
-#
-#   indexed_colors:
-#     - { index: 16, color: "#ffa066" }
-#     - { index: 17, color: "#ff5d62" }
+    background: '#000000'
+    foreground: '#ffffff'
