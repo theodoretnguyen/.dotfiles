@@ -29,8 +29,8 @@ return {
         float = {
           focusable = false,
           style = "minimal",
-          border = false,
-          source = false,
+          border = "rounded",
+          source = true,
           header = "",
           prefix = "",
         },
@@ -55,22 +55,29 @@ return {
         nmap("<leader>ld", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
         nmap("<leader>lw", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
         nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-        nmap("<leader>k", vim.lsp.buf.signature_help, "Signature Documentation")
+        nmap("<leader>lk", vim.lsp.buf.signature_help, "Signature Documentation")
         nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
         nmap("<leader>li", "<cmd>LspInfo<cr>", "Info")
 
         vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
           vim.lsp.buf.format()
         end, { desc = "Format current buffer with LSP" })
+        nmap("<leader>lf", "<cmd>Format<cr>", "Format current buffer with LSP")
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover,
-        { border = false }
+          {
+            focusable = false,
+            border = "rounded",
+          }
         )
 
         vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help,
-        { border = false }
+          {
+            focusable = false,
+            border = "rounded",
+          }
         )
       end
 
@@ -84,8 +91,8 @@ return {
         html = {},
         cssls = {},
         tsserver = {},
-        quick_lint_js = {},
-        psalm = {},
+        denols = {},
+        intelephense = {},
         lua_ls = {
           Lua = {
             diagnostics = {
@@ -118,7 +125,8 @@ return {
   },
   {
     "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", enabled = false },
+    enabled = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
       { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle"  },
       { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
