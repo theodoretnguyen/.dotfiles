@@ -1,12 +1,12 @@
 return {
   "L3MON4D3/LuaSnip",
   event = { "InsertEnter" },
-  dependencies = "rafamadriz/friendly-snippets",
+  dependencies = { "rafamadriz/friendly-snippets", enabled = true },
   config = function()
     local luasnip = require("luasnip")
     vim.keymap.set("n", "<leader>S",
     function()
-      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/after/plugin/luasnip/luasnippets/" })
+      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/"})
       print("~ Loaded Snippets! ~")
     end,
     { silent = true, desc = "Load Snippets" }
