@@ -17,7 +17,8 @@ return {
     opts = {
       filetypes = { "css" },
       user_default_options = {
-        mode = "virtualtext",
+        mode = "background",
+        rgb_fn = true,
       },
     },
   },
@@ -39,7 +40,7 @@ return {
         shade_terminals = true,
         shading_factor = 2,
         start_in_insert = true,
-        insert_mappings = true,
+        insert_mappings = false,
         terminal_mappings = true,
         persist_size = false,
         persist_mode = false,
@@ -54,9 +55,6 @@ return {
   },
   {
     "folke/which-key.nvim",
-    keys = {
-      { "<space>" }
-    },
     config = function()
       local whichkey = require('which-key')
 
@@ -110,6 +108,15 @@ return {
       }, { prefix = "<localleader>" })
 
       whichkey.setup({
+        presets = {
+          operators = false,
+          motions = false,
+          text_objects = false,
+          windows = false,
+          nav = false,
+          z = true,
+          g = false,
+        },
         key_labels = {
           ["<space>"] = "SPC",
         },
