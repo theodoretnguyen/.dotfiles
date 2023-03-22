@@ -8,7 +8,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = { "InsertEnter" },
+    ft = { "html", "php", },
     dependencies = { "nvim-treesitter" },
     config = true,
   },
@@ -27,7 +27,7 @@ return {
       { "cs", mode = "n" },
       { "ys", mode = "n" },
       { "yS", mode = "n" },
-      { "S", mode = "v" },
+      { "S" , mode = "v" },
       { "gS", mode = "v" },
    },
     config = true,
