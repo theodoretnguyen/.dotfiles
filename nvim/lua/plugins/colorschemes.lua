@@ -14,11 +14,13 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    opts = {
-      style = "moon",
-      transparent = false,
-      lualine_bold = true,
-    },
+    config = function()
+      require("tokyonight").setup({
+        style = "moon",
+        transparent = false,
+        lualine_bold = false,
+      })
+    end,
   },
   {
     "rebelot/kanagawa.nvim",
