@@ -5,10 +5,6 @@ return {
     -- sources
     "hrsh7th/cmp-nvim-lsp", -- nvim_lsp : LSP source
     "saadparwaiz1/cmp_luasnip", -- luasnip : snippets source
-    "hrsh7th/cmp-nvim-lua", -- nvim_lua : neovim's lua api
-    "hrsh7th/cmp-buffer", -- buffer : buffer source
-    "hrsh7th/cmp-path", -- path : filesystem paths source
-    "hrsh7th/cmp-cmdline", -- cmdline : command line suggestions
     -- kind icons
     "onsails/lspkind.nvim",
   },
@@ -38,53 +34,20 @@ return {
       }),
       formatting = {
         format = require('lspkind').cmp_format({
-          mode = "symbol",
+          mode = "symbol_text",
           preset = "default",
+          menu = ({
+            -- buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            luasnip = "[LuaSnip]",
+            -- nvim_lua = "[Lua]",
+            -- latex_symbols = "[Latex]",
+          }),
         }),
       },
       sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "nvim_lua" },
-        { name = "buffer" },
-        { name = "path" },
-      },
-    })
-
-    -- [[ Filetype Configurations ]]
-
-    -- / and ? Modes
-    cmp.setup.cmdline({ "/", "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "buffer" },
-      },
-      formatting = {
-        format = function(_, vim_item)
-          vim_item.kind = ""
-          return vim_item
-        end,
-      },
-    })
-
-    -- : (Command) Mode
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = "path" },
-      }, {
-        {
-          name = "cmdline",
-          option = {
-            ignore_cmds = { "Man", "!" },
-          },
-        },
-      }),
-      formatting = {
-        format = function(_, vim_item)
-          vim_item.kind = ""
-          return vim_item
-        end,
       },
     })
   end,
