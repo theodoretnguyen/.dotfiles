@@ -2,8 +2,9 @@ vim.o.fileencoding = 'utf-8'
 vim.o.updatetime = 50
 vim.o.makeprg = 'gmake'
 vim.o.swapfile = false
+vim.g.loaded_perl_provider = 0
 
-vim.o.guicursor = ''
+-- vim.o.guicursor = ''
 vim.o.termguicolors = true
 vim.o.cursorline = true
 
@@ -13,9 +14,9 @@ vim.o.splitright = true
 vim.o.showtabline = 1
 vim.o.showcmd = false
 vim.o.laststatus = 3
-vim.o.showmode = true
-vim.o.winbar = [[ %f %m]]
-vim.o.statusline = [[ %y%=%f %m%=%l,%c %P ]]
+vim.o.showmode = false
+-- vim.o.winbar = [[ %f %m]]
+-- vim.o.statusline = [[ %y%=%f %m%=%l,%c %P ]]
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
