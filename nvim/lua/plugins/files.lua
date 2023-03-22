@@ -2,7 +2,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     enabled = true,
-    dependencies = { "nvim-tree/nvim-web-devicons", enabled = false },
+    dependencies = { "nvim-tree/nvim-web-devicons", enabled = true },
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
     },

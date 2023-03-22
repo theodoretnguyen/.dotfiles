@@ -1,11 +1,11 @@
 return {
   {
     "utilyre/barbecue.nvim",
-    enabled = false,
+    enabled = true,
     version = "*",
     dependencies = {
       "SmiteshP/nvim-navic",
-      { "nvim-tree/nvim-web-devicons", enabled = false },
+      { "nvim-tree/nvim-web-devicons" },
     },
     config = true,
   },
@@ -13,49 +13,53 @@ return {
     "akinsho/bufferline.nvim",
     enabled = false,
     version = "v3.*",
-    dependencies = { "nvim-tree/nvim-web-devicons", enabled = false },
-    keys = {
-      { "<s-l>", "<cmd>BufferLineCycleNext<cr>" },
-      { "<s-h>", "<cmd>BufferLineCyclePrev<cr>" },
-      { "[b", "<cmd>BufferLineMovePrev<cr>" },
-      { "]b", "<cmd>BufferLineMoveNext<cr>" },
-    },
-    opts = {
-      options = {
-        mode = "buffers",
-        indicator = {
-          icon = "",
-          style = "none",
-        },
-        diagnostics = "nvim_lsp",
-        diagnostics_update_in_insert = false,
-        diagnostics_indicator = function(count, level)
-          local icon = level:match("error") and " " or " "
-          return icon .. "(" .. count .. ")"
-        end,
-        offsets = {
-          {
-            filetype = "NvimTree",
-            text = "File Explorer",
-            text_align = "center",
-            separator = true,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      vim.keymap.set("n", "<s-l>", "<cmd>BufferLineCycleNext<cr>")
+      vim.keymap.set("n", "<s-h>", "<cmd>BufferLineCyclePrev<cr>")
+      vim.keymap.set("n", "[b", "<cmd>BufferLineMovePrev<cr>")
+      vim.keymap.set("n", "]b", "<cmd>BufferLineMoveNext<cr>")
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          indicator = {
+            icon = "",
+            style = "none",
           },
-        },
-        show_buffer_close_icons = false,
-        -- if using kitty, "slant"
-        -- if using alacritty, "padded_slant"
-        separator_style = "padded_slant",
-      },
-    },
+          diagnostics = "nvim_lsp",
+          diagnostics_update_in_insert = false,
+          diagnostics_indicator = function(count, level)
+            local icon = level:match("error") and " " or " "
+            return icon .. "(" .. count .. ")"
+          end,
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              text_align = "center",
+              separator = true,
+            },
+          },
+          show_buffer_close_icons = false,
+          -- if using kitty, "slant"
+          -- if using alacritty, "padded_slant"
+          separator_style = "padded_slant",
+        }
+      })
+    end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-    config = true,
+    enabled = true,
+    cmd = "IndentBlanklineEnable",
+    config = function()
+      vim.keymap.set("n", "<leader>i", "<cmd>IndentBlanklineToggle<cr>", { desc = "Indent Blankline" })
+      require("indent_blankline").setup({})
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
-    enabled = false,
+    enabled = true,
     opts = {
       sections = {
         lualine_a = { "mode" },
