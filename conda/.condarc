@@ -1,0 +1,5 @@
+auto_activate_base: false
+channels:
+  - pytorch
+  - conda-forge
+  - defaults

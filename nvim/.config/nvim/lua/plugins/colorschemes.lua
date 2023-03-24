@@ -2,13 +2,11 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     config = function()
       require("catppuccin").setup({
         transparent_background = false,
       })
-      vim.cmd([[colorscheme catppuccin]])
     end,
   },
   {
@@ -24,14 +22,13 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
-    opts = {
-      transparent = false,
-    }
-  },
-  {
-    "bluz71/vim-nightfly-colors",
-    name = "nightfly",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup({
+        transparent = false,
+      })
+      vim.cmd[[colorscheme kanagawa]]
+    end,
   },
 }

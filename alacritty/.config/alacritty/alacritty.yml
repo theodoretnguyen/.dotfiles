@@ -23,5 +23,5 @@ mouse:
 
 colors:
   primary:
-    background: '#000000'
+    background: '#0f0f0f'
     foreground: '#ffffff'

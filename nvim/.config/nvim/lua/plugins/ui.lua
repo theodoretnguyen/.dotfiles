@@ -1,7 +1,7 @@
 return {
   {
     "utilyre/barbecue.nvim",
-    enabled = true,
+    enabled = false,
     version = "*",
     dependencies = {
       "SmiteshP/nvim-navic",
@@ -59,7 +59,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    enabled = true,
+    enabled = false,
     opts = {
       sections = {
         lualine_a = { "mode" },

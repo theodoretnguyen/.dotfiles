@@ -1,17 +1,5 @@
 return {
   {
-    "christoomey/vim-tmux-navigator",
-    enabled = true,
-    priority = 100, -- make sure <c-\> mapping is disabled before ToggleTerm
-    config = function()
-      vim.g.tmux_navigator_no_mappings = 1
-      vim.keymap.set({ "n", "o", "v" }, "<c-h>", ":<c-u>TmuxNavigateLeft<cr>", { desc = "Tmux Left", silent = true })
-      vim.keymap.set({ "n", "o", "v" }, "<c-j>", ":<c-u>TmuxNavigateDown<cr>", { desc = "Tmux Down", silent = true })
-      vim.keymap.set({ "n", "o", "v" }, "<c-k>", ":<c-u>TmuxNavigateUp<cr>", { desc = "Tmux Up", silent = true })
-      vim.keymap.set({ "n", "o", "v" }, "<c-l>", ":<c-u>TmuxNavigateRight<cr>", { desc = "Tmux Right", silent = true })
-    end,
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     ft = { "css" },
     opts = {
@@ -25,7 +13,6 @@ return {
   {
     "akinsho/toggleterm.nvim",
     config = function()
-      vim.keymap.set("", [[<c-\>]], "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm" })
       require("toggleterm").setup({
         autochdir = true,
         size = function(term)

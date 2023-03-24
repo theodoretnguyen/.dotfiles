@@ -50,7 +50,6 @@ return {
         nmap("gd", vim.lsp.buf.definition, "Goto Definition")
         nmap("gi", vim.lsp.buf.implementation, "Goto Implementation")
         nmap("gr", require("telescope.builtin").lsp_references, "Goto References")
-        -- nmap("n", "gr", vim.lsp.buf.references, "Goto References")
         nmap("go", vim.lsp.buf.type_definition, "Goto Type Definition")
         nmap("<leader>ld", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
         nmap("<leader>lw", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
