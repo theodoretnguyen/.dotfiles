@@ -1,6 +1,6 @@
 #!/bin/sh
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export BROWSER="brave"
 eval $(/opt/homebrew/bin/brew shellenv)
 eval "$(fnm env --use-on-cd)"
