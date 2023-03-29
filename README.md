@@ -15,7 +15,7 @@ git clone https://git@github.com:theodoretnguyen/.dotfiles.git ~
 Run `stow` to symlink everything or just select what you want
 
 ```zsh
-stow */ # Everything (the '/' ignores the README, Brewfile, and Brewfile.lock.json)
+stow */ # Everything
 ```
 
 ## Homebrew Formulae
