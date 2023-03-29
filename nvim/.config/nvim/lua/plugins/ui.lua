@@ -11,7 +11,7 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
-    enabled = false,
+    enabled = true,
     version = "v3.*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -43,7 +43,7 @@ return {
           show_buffer_close_icons = false,
           -- if using kitty, "slant"
           -- if using alacritty, "padded_slant"
-          separator_style = "padded_slant",
+          separator_style = "slant",
         }
       })
     end,
@@ -59,7 +59,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    enabled = false,
+    enabled = true,
     opts = {
       sections = {
         lualine_a = { "mode" },

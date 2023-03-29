@@ -1,5 +1,9 @@
 return {
   {
+    "knubie/vim-kitty-navigator",
+    build = { "cp ./*.py ~/.config/kitty/" },
+  },
+  {
     "NvChad/nvim-colorizer.lua",
     ft = { "css" },
     opts = {
