@@ -43,17 +43,4 @@ return {
       vim.g.mkdp_theme = "dark"
     end,
   },
-  {
-    "NFrid/markdown-togglecheck",
-    dependencies = { "NFrid/treesitter-utils" },
-    ft = { "markdown" },
-    keys = {
-      { "<leader>mm", "<cmd>lua require('markdown-togglecheck').toggle<cr>", desc = "Check/Uncheck"  },
-      { "<leader>mM", "<cmd>lua require('markdown-togglecheck').toggle_box<cr>", desc = "Box/Unbox" },
-    },
-    opts = {
-      create = true,
-      remove = false,
-    },
-  },
 }
