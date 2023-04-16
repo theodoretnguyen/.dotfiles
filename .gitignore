@@ -1,0 +1,4 @@
+nvim/.config/nvim/spell/
+nvim/.config/nvim/lua/.luarc.json
+
+zsh/.config/zsh/homebrew-github-api-token.zsh
