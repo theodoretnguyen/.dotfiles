@@ -11,6 +11,7 @@ fi
 # sources
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/homebrew-github-api-token.zsh"
 
 # plugins
 plug "zsh-users/zsh-autosuggestions"
