@@ -31,9 +31,9 @@ return {
   s({ trig = "main", snippetType = "autosnippet" },
     fmta([[
     int main() {
-        <>
+      <>
 
-        return 0;
+      return 0;
     }
     ]],
       {
@@ -47,7 +47,7 @@ return {
   s({ trig = "ff", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     <> <>(<>) {
-        <>
+      <>
     }
     ]],
       {
@@ -64,7 +64,7 @@ return {
   s({ trig = "mff", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     <> <>::<>(<>) {
-        <>
+      <>
     }
     ]],
       {
@@ -82,7 +82,7 @@ return {
   s({ trig = "frl", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     for (<>; <>; <>) {
-        <>
+      <>
     }
     ]],
       {
@@ -99,7 +99,7 @@ return {
   s({ trig = "wll", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     while (<>) {
-        <>
+      <>
     }
     ]],
       {
@@ -114,7 +114,7 @@ return {
   s({ trig = "dwl", regTrig = false, wordTrig = true, snippetType = "autosnippet" },
     fmta([[
     do {
-        <>
+      <>
     } while (<>);
     ]],
       {
