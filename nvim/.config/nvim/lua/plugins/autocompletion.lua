@@ -37,10 +37,10 @@ return {
           format = require('lspkind').cmp_format({
             mode = "symbol_text",
             preset = "default",
-            menu = ({
-              nvim_lsp = "[LSP]",
-              luasnip = "[LuaSnip]",
-            }),
+            -- menu = ({
+            --   nvim_lsp = "[LSP]",
+            --   luasnip = "[LuaSnip]",
+            -- }),
           }),
         },
         sources = {
