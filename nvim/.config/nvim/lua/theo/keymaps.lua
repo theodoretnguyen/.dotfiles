@@ -92,3 +92,16 @@ vim.keymap.set('n', '<leader>.', '<cmd>bd<cr>', { desc = 'Close Buffer' } )
 
 -- Perform dot command on visual blocks
 vim.keymap.set('v', '.', ':normal .<cr>', { silent = true })
+
+IS_DARK = false
+
+function TOGGLE_BACKGROUND()
+  if IS_DARK then
+    vim.cmd('set background=light')
+  else
+    vim.cmd('set background=dark')
+  end
+  IS_DARK = not IS_DARK
+end
+
+vim.keymap.set('n', '<leader>b', '<cmd>lua TOGGLE_BACKGROUND()<CR>')
