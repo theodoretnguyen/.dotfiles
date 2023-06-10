@@ -13,8 +13,8 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
 vim.keymap.set('x', '<leader>p', [["_dP]])
 
 -- Better deletion
-vim.keymap.set( { 'n', 'v' }, '<leader>d', [["_d]])
-vim.keymap.set( 'n', 'x', [["_x]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set('n', 'x', [["_x]])
 
 -- Yank into system register
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
@@ -30,8 +30,8 @@ vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv", { silent = true })
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { silent = true })
 
 -- Vertical navigation accounting for word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true})
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true})
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Center word when going through searches
 vim.keymap.set('n', 'n', 'nzzzv')
@@ -53,16 +53,16 @@ vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>')
 vim.keymap.set('n', '<s-tab>', '<cmd>bprevious<cr>')
 
 -- Tabs
-vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New' } )
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { desc = 'Next' } )
-vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { desc = 'Prev' } )
-vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>', { desc = 'Close' } )
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { desc = 'New' })
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { desc = 'Next' })
+vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { desc = 'Prev' })
+vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>', { desc = 'Close' })
 
 -- Windows
-vim.keymap.set('n', '<leader>sv', '<c-w>v', { desc = 'Vertical' } )
-vim.keymap.set('n', '<leader>sh', '<c-w>s', { desc = 'Horizontal' } )
-vim.keymap.set('n', '<leader>se', '<c-w>=', { desc = 'Equalize' } )
-vim.keymap.set('n', '<leader>sx', '<c-w>c', { desc = 'Close' } )
+vim.keymap.set('n', '<leader>sv', '<c-w>v', { desc = 'Vertical' })
+vim.keymap.set('n', '<leader>sh', '<c-w>s', { desc = 'Horizontal' })
+vim.keymap.set('n', '<leader>se', '<c-w>=', { desc = 'Equalize' })
+vim.keymap.set('n', '<leader>sx', '<c-w>c', { desc = 'Close' })
 vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
@@ -76,19 +76,19 @@ vim.keymap.set("t", "<c-k>", [[<cmd>wincmd k<cr>]])
 vim.keymap.set("t", "<c-l>", [[<cmd>wincmd l<cr>]])
 
 -- Change directory
-vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { desc = 'Change Working Directory' } )
+vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h<cr><cmd>pwd<cr>', { desc = 'Change Working Directory' })
 
 -- Replace all
-vim.keymap.set('n', '<leader>r', ':%s//g<left><left>', { desc = 'Replace All' } )
+vim.keymap.set('n', '<leader>r', ':%s//g<left><left>', { desc = 'Replace All' })
 
 -- Orthography
-vim.keymap.set('n', '<leader>o', '<cmd>set spell! spelllang=en_us<cr>', { desc = 'Orthography' } )
+vim.keymap.set('n', '<leader>o', '<cmd>set spell! spelllang=en_us<cr>', { desc = 'Orthography' })
 
 -- Clear highlight
-vim.keymap.set('n', '<leader>/', '<cmd>nohl<cr>', { desc = 'Clear Highlights' } )
+vim.keymap.set('n', '<leader>/', '<cmd>nohl<cr>', { desc = 'Clear Highlights' })
 
 -- Close buffer
-vim.keymap.set('n', '<leader>.', '<cmd>bd<cr>', { desc = 'Close Buffer' } )
+vim.keymap.set('n', '<leader>.', '<cmd>bd<cr>', { desc = 'Close Buffer' })
 
 -- Perform dot command on visual blocks
 vim.keymap.set('v', '.', ':normal .<cr>', { silent = true })

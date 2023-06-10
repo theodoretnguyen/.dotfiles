@@ -59,4 +59,4 @@ vim.g.netrw_winsize = 25
 -- Install pip: conda install pip
 -- Install pynvim: conda install pynvim
 -- Copy path to python: which python
-vim.g.python3_host_prog='/opt/homebrew/Caskroom/miniconda/base/envs/pynvim/bin/python'
+vim.g.python3_host_prog = '/opt/homebrew/Caskroom/miniconda/base/envs/pynvim/bin/python'

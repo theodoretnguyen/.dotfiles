@@ -2,9 +2,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { "williamboman/mason.nvim", config = true },
+      { "williamboman/mason.nvim",          config = true },
       { "williamboman/mason-lspconfig.nvim" },
-      { "j-hui/fidget.nvim", config = true },
+      { "j-hui/fidget.nvim",                tag = "legacy", config = true },
     },
     config = function()
       -- [[ Diagnostics ]]
@@ -65,7 +65,7 @@ return {
         nmap("<leader>lf", "<cmd>Format<cr>", "Format current buffer with LSP")
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
+          vim.lsp.handlers.hover,
           {
             focusable = false,
             border = "rounded",
@@ -73,7 +73,7 @@ return {
         )
 
         vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
+          vim.lsp.handlers.signature_help,
           {
             focusable = false,
             border = "rounded",
@@ -128,10 +128,10 @@ return {
     enabled = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Toggle"  },
+      { "<leader>xx", "<cmd>TroubleToggle<cr>",                       desc = "Toggle" },
       { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
-      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics"  },
-      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",  desc = "Quickfix List"  },
+      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics" },
+      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix List" },
     },
     opts = {
       auto_close = true,

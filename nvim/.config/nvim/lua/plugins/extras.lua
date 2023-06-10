@@ -52,9 +52,9 @@ return {
       whichkey.register({
         f = { name = "Find" },
         l = { name = "LSP" },
-        s = { name = "Split"},
-        c = { name = "Make"},
-        m = { name = "Markdown"},
+        s = { name = "Split" },
+        c = { name = "Make" },
+        m = { name = "Markdown" },
         h = { name = "Git" },
         x = { name = "Trouble" },
         y = { name = "which_key_ignore" },

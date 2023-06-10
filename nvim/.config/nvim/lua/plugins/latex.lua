@@ -6,7 +6,7 @@ return {
     vim.g.vimtex_syntax_conceal_disable = 0
     vim.g.vimtex_delim_toggle_mod_list = {
       { "\\left", "\\right" },
-      { "\\big", "\\big" }
+      { "\\big",  "\\big" }
     }
 
     vim.g.vimtex_quickfix_mode = 0

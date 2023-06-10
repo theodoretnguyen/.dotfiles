@@ -5,13 +5,13 @@ return {
   config = function()
     local luasnip = require("luasnip")
     vim.keymap.set("n", "<leader>S",
-    function()
-      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/"})
-      print("~ Loaded Snippets! ~")
-    end,
-    { silent = true, desc = "Load Snippets" }
+      function()
+        require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+        print("~ Loaded Snippets! ~")
+      end,
+      { silent = true, desc = "Load Snippets" }
     )
-    vim.cmd[[
+    vim.cmd [[
     imap <silent><expr> <tab> luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<tab>"
     smap <silent><expr> <tab> luasnip#jumpable(1) ? "<Plug>luasnip-jump-next" : "<tab>"
     imap <silent><expr> <s-tab> luasnip#jumpable(-1) ? "<Plug>luasnip-jump-prev" : "<s-tab>"

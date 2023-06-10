@@ -4,7 +4,7 @@ return {
     event = { "InsertEnter" },
     dependencies = {
       -- sources
-      "hrsh7th/cmp-nvim-lsp", -- nvim_lsp : LSP source
+      "hrsh7th/cmp-nvim-lsp",     -- nvim_lsp : LSP source
       "saadparwaiz1/cmp_luasnip", -- luasnip : snippets source
       -- kind icons
       "onsails/lspkind.nvim",

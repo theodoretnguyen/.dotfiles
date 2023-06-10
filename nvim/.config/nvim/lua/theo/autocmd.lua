@@ -3,20 +3,20 @@ local autocmd = vim.api.nvim_create_autocmd
 
 local highlight_yank = augroup('HighlightYank', { clear = true })
 autocmd('TextYankPost', {
-	group = highlight_yank,
+  group = highlight_yank,
   pattern = { '*' },
-	callback = function()
-		vim.highlight.on_yank({
-			timeout = 40,
-		})
-	end,
+  callback = function()
+    vim.highlight.on_yank({
+      timeout = 40,
+    })
+  end,
 })
 
 local trim_whitespace = augroup('TrimWhitespace', { clear = true })
 autocmd({ 'BufWritePre' }, {
-	group = trim_whitespace,
+  group = trim_whitespace,
   pattern = { '*' },
-	command = [[
+  command = [[
 	let currPos = getpos(".")
 	%s/\s\+$//e
 	%s/\n\+\%$//e
@@ -73,24 +73,24 @@ autocmd('FileType', {
 
     -- Compile
     vim.keymap.set("n", "<leader>cc",
-    "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>make<cr><cr><cmd>botright cwindow<cr>",
-    { silent = true, desc = "Compile" })
+      "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>make<cr><cr><cmd>botright cwindow<cr>",
+      { silent = true, desc = "Compile" })
 
     -- Output (floating terminal)
     vim.keymap.set("n", "<leader>co",
-    "<cmd>ToggleTerm direction=float<cr>clear<cr>./output<cr>",
-    { silent = true, desc = "Output (float)" })
+      "<cmd>ToggleTerm direction=float<cr>clear<cr>./output<cr>",
+      { silent = true, desc = "Output (float)" })
 
     -- Output (vertical terminal)
     vim.keymap.set("n", "<leader>cO",
-    "<cmd>ToggleTerm direction=vertical<cr>clear<cr>./output<cr>",
-    { silent = true, desc = "Output (vertical)" })
+      "<cmd>ToggleTerm direction=vertical<cr>clear<cr>./output<cr>",
+      { silent = true, desc = "Output (vertical)" })
 
     -- Clean
     vim.keymap.set("n", "<leader>cl",
-    "<cmd>cd %:p:h<cr><cmd>make clean<cr><cr>",
-    { silent = true, desc = "Clean" })
-end,
+      "<cmd>cd %:p:h<cr><cmd>make clean<cr><cr>",
+      { silent = true, desc = "Clean" })
+  end,
 })
 
 -- java
@@ -110,20 +110,20 @@ autocmd('FileType', {
 
     -- Compile
     vim.keymap.set("n", "<leader>cc",
-    "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>make<cr><cr>",
-    { silent = true, desc = "Compile" }
+      "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>make<cr><cr>",
+      { silent = true, desc = "Compile" }
     )
 
     -- Output
     vim.keymap.set("n", "<leader>co",
-    "<cmd>ToggleTerm<cr>clear<cr>java <tab><cr>",
-    { silent = true, desc = "Output" }
+      "<cmd>ToggleTerm<cr>clear<cr>java <tab><cr>",
+      { silent = true, desc = "Output" }
     )
 
     -- Clean
     vim.keymap.set("n", "<leader>cl",
-    "<cmd>cd %:p:h<cr><cmd>make clean<cr><cr>",
-    { silent = true, desc = "Clean" }
+      "<cmd>cd %:p:h<cr><cmd>make clean<cr><cr>",
+      { silent = true, desc = "Clean" }
     )
   end,
 })
@@ -147,20 +147,20 @@ autocmd('FileType', {
 
     -- PDF
     vim.keymap.set("n", "<leader>mp",
-    "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>!pandoc %:t -o %:t:r.pdf<cr><cr>",
-    { silent = true, desc = "PDF" }
+      "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>!pandoc %:t -o %:t:r.pdf<cr><cr>",
+      { silent = true, desc = "PDF" }
     )
 
     -- PDF Slides
     vim.keymap.set("n", "<leader>ms",
-    "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>!pandoc -t beamer %:t -o %:t:r-slides.pdf<cr><cr>",
-    { silent = true, desc = "PDF Slides" }
+      "<cmd>cd %:p:h<cr><cmd>w<cr><cmd>!pandoc -t beamer %:t -o %:t:r-slides.pdf<cr><cr>",
+      { silent = true, desc = "PDF Slides" }
     )
 
     -- Markmap-cli
     vim.keymap.set("n", "<leader>mt",
-    "<cmd>ToggleTerm<cr>markmap -w ~/TODO.md<cr>",
-    { silent = true, desc = "Markmap" }
+      "<cmd>ToggleTerm<cr>markmap -w ~/TODO.md<cr>",
+      { silent = true, desc = "Markmap" }
     )
   end,
 })
