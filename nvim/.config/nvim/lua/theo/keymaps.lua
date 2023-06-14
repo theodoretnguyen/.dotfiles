@@ -104,4 +104,4 @@ function TOGGLE_BACKGROUND()
   IS_DARK = not IS_DARK
 end
 
-vim.keymap.set('n', '<leader>b', '<cmd>lua TOGGLE_BACKGROUND()<CR>')
+vim.keymap.set('n', '<leader>b', '<cmd>lua TOGGLE_BACKGROUND()<CR>', { desc = 'Toggle Background' })
