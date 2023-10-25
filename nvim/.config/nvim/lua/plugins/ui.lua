@@ -51,11 +51,8 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     enabled = true,
-    cmd = "IndentBlanklineEnable",
-    config = function()
-      vim.keymap.set("n", "<leader>i", "<cmd>IndentBlanklineToggle<cr>", { desc = "Indent Blankline" })
-      require("indent_blankline").setup({})
-    end,
+    main = "ibl",
+    opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",
