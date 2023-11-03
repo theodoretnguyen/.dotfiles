@@ -5,6 +5,7 @@ export BROWSER="brave"
 eval $(/opt/homebrew/bin/brew shellenv)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
+eval "$(rbenv init - zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
