@@ -152,16 +152,23 @@ return {
 
 % Passage for Printout
 \thispagestyle{empty}
-\begin{doublespace}
+\newgeometry{left=0.5in,right=0.5in,top=0.5in,bottom=0.5in}
+
+\setstretch{1}
 
 \huge{\textbf{<>} <>}
 
 {\Large
-<>
+\begin{flushleft}
+    \begin{adjustwidth}{0em}{0em}
+      <>
+    \end{adjustwidth}
+\end{flushleft}
 }
-\end{doublespace}
 
 \pagebreak
+\restoregeometry
+\setstretch{1.0}
 
 \thispagestyle{empty}
 {\huge Application}
