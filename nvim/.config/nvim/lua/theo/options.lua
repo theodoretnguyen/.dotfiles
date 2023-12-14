@@ -4,6 +4,8 @@ vim.o.makeprg = 'gmake'
 vim.o.swapfile = false
 vim.g.loaded_perl_provider = 0
 
+vim.o.foldmethod="marker"
+
 -- vim.o.guicursor = ''
 vim.o.termguicolors = true
 vim.o.cursorline = true
