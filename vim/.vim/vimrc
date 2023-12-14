@@ -1,0 +1,197 @@
+" OPTIONS {{{
+filetype on
+filetype plugin on
+filetype indent on
+
+set foldmethod=marker
+
+set fileencoding=utf-8
+set updatetime=50
+set makeprg=gmake
+set noswapfile
+let g:loaded_perl_provider = 0
+
+set termguicolors
+set cursorline
+
+set splitbelow
+set splitright
+
+set showtabline=1
+set noshowcmd
+set laststatus=2
+set noshowmode
+
+set completeopt+=menu
+set completeopt+=menuone
+set completeopt+=noselect
+
+set number
+set relativenumber
+set signcolumn=yes
+set scrolloff=8
+
+set backspace=indent,eol,start
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smarttab
+set autoindent
+set smartindent
+set textwidth=0
+set colorcolumn=80
+set nolinebreak
+set nowrap
+set nobreakindent
+
+set nohlsearch
+set incsearch
+set smartcase
+set ignorecase
+
+set timeout
+set timeoutlen=500
+set ttimeout
+set ttimeoutlen=20
+
+set wildmenu
+set wildoptions=pum
+set wildmode=full
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 0
+let g:netrw_winsize = 25
+
+" }}}
+
+" KEYMAPS {{{
+" Leader keys
+let g:mapleader = ' '
+let g:maplocalleader = '\\'
+
+" Unmap Q
+nnoremap Q <nop>
+
+" Save and quit
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+" Better paste
+xnoremap <leader>p "_dP
+
+" Better deletion
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+nnoremap x "_x
+
+" Yank into system register
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" Yank from cursor to end of line
+nnoremap Y yg$
+
+" Join lines without cursor moving
+nnoremap J mzJ`z
+
+" Move visual blocks up and down
+vnoremap <silent> J :m '>+1<CR>gv=gv
+vnoremap <silent> K :m '<-2<CR>gv=gv
+
+" Vertical navigation accounting for word wrap
+" nnoremap k v:count == 0 ? 'gk' : 'k'<CR>
+" nnoremap j v:count == 0 ? 'gj' : 'j'<CR>
+
+" Center word when going through searches
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Center word when going half page up/down
+nnoremap <c-u> <c-u>zz
+nnoremap <c-d> <c-d>zz
+
+" Stay in indent mode when indenting/unindenting
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <leader>e <cmd>Explore<CR>
+
+" Buffers
+nnoremap <silent> <tab> :bnext<CR>
+nnoremap <silent> <s-tab> :bprevious<CR>
+
+" Tabs
+nnoremap <silent> <leader>tt :tabnew<CR>
+nnoremap <silent> <leader>tn :tabnext<CR>
+nnoremap <silent> <leader>tp :tabprevious<CR>
+nnoremap <silent> <leader>tx :tabclose<CR>
+
+" Windows
+nnoremap <leader>sv <c-w>v
+nnoremap <leader>sh <c-w>s
+nnoremap <leader>se <c-w>=
+nnoremap <leader>sx <c-w>c
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Terminals
+tnoremap <esc> <c-\><c-n>
+tnoremap <c-h> <c-w>h
+tnoremap <c-j> <c-w>j
+tnoremap <c-k> <c-w>k
+tnoremap <c-l> <c-w>l
+
+" Change directory
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" Replace all
+nnoremap <leader>r :%s//g<left><left>
+
+" Orthography
+nnoremap <silent> <leader>o :set spell! spelllang=en_us<CR>
+
+" Clear highlight
+nnoremap <silent> <leader>/ :nohl<CR>
+
+" Close buffer
+nnoremap <silent> <leader>. :bd<CR>
+
+" Perform dot command on visual blocks
+vnoremap <silent> . :normal .<CR>
+" }}}
+
+" AUTOCMD {{{
+augroup TrimWhitespace
+  autocmd! BufWritePre * execute 'let currPos = getpos(".")' | %s/\s\+$//e | %s/\n\+\%$//e | execute 'cal cursor(currPos[1], currPos[2])'
+augroup END
+
+augroup VerticallyCenterInsertMode
+  autocmd! InsertEnter * norm zz
+augroup END
+
+augroup DisableAutomaticCommenting
+  autocmd! FileType * setlocal formatoptions-=cro
+augroup END
+" }}}
+
+" PLUGINS {{{
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+call plug#begin()
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+call plug#end()
+" }}}
+
+" COLORSCHEME {{{
+colorscheme catppuccin_mocha
+" }}}
