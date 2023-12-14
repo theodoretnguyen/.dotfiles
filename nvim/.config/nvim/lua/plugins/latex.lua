@@ -2,6 +2,7 @@ return {
   "lervag/vimtex",
   ft = { "tex", "latex" },
   config = function()
+    vim.g.vimtex_syntax_enabled = 1
     vim.g.vimtex_indent_enabled = 0
     vim.g.vimtex_syntax_conceal_disable = 0
     vim.g.vimtex_delim_toggle_mod_list = {
@@ -24,5 +25,6 @@ return {
     vim.g.maplocalleader = "\\"
     vim.g.vimtex_mappings_enabled = 1
     vim.g.vimtex_imaps_enabled = 0
+    vim.keymap.set("n", "<localleader>lf", "<cmd>set conceallevel=2<CR>", { desc = "Conceal" })
   end,
 }
