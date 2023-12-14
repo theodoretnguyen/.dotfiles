@@ -31,7 +31,18 @@ return {
         "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({previewer=false}))<cr>",
         desc = "Within Current Buffer"
       },
+      {
+        "<leader>fc",
+        "<cmd>lua require('telescope.builtin').colorscheme(require('telescope.themes').get_ivy({previewer=true}))<cr>",
+        desc = "Colorschemes"
+      },
     },
-    config = true,
+    opts = {
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        }
+      }
+    },
   },
 }
