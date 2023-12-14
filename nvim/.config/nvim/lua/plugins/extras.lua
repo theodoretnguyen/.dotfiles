@@ -156,4 +156,11 @@ return {
       },
     }
   },
+  {
+    "Eandrju/cellular-automaton.nvim",
+    enabled = true,
+    keys = {
+      { "<leader>F", "<cmd>CellularAutomaton scramble<CR>", desc = "FML" }
+    },
+  },
 }
