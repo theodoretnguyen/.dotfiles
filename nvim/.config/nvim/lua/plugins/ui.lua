@@ -12,7 +12,6 @@ return {
   {
     "akinsho/bufferline.nvim",
     enabled = true,
-    version = "v3.*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       vim.keymap.set("n", "<s-l>", "<cmd>BufferLineCycleNext<cr>")
