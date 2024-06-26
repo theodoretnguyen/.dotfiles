@@ -4,7 +4,7 @@ return {
     enabled = true,
     dependencies = { "nvim-tree/nvim-web-devicons", enabled = true },
     keys = {
-      { "<leader>E", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
+      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
     },
     opts = {
       disable_netrw = true,
@@ -48,7 +48,7 @@ return {
   {
     "stevearc/oil.nvim",
     keys = {
-      { "<leader>e", "<cmd>Oil<cr>", desc = "Oil" },
+      { "<leader>E", "<cmd>Oil<cr>", desc = "Oil" },
     },
     opts = {
       view_options = {
