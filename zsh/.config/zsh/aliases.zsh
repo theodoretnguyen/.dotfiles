@@ -8,8 +8,8 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-# exa
-alias ls="exa --group-directories-first --icons"
+# eza
+alias ls='eza --group-directories-first --icons=auto'
 alias ll="ls -lh --git"
-alias la="ll -a"
-alias tree="ls -a --tree --icons"
+alias la='ll -a'
+alias lt='ls -a --tree'
