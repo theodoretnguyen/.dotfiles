@@ -90,7 +90,7 @@ return {
         pyright = {},
         html = {},
         cssls = {},
-        tsserver = {},
+        ts_ls = {},
         denols = {},
         intelephense = {},
         lua_ls = {
