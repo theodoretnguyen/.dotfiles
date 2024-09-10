@@ -4,9 +4,9 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
-    config = function()
+    init = function()
       require("catppuccin").setup({})
-      vim.cmd [[colorscheme catppuccin]]
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
