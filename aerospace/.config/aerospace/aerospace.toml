@@ -26,7 +26,7 @@ outer.top =        10
 outer.right =      10
 
 [mode.main.binding]
-ctrl-enter = 'exec-and-forget open -n /Applications/kitty.app'
+ctrl-enter = 'exec-and-forget open -n /Applications/alacritty.app'
 
 cmd-h = []
 cmd-alt-h = []
@@ -103,7 +103,7 @@ if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
@@ -113,18 +113,6 @@ run = 'move-node-to-workspace 4'
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Preview'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
-run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
