@@ -1,10 +1,10 @@
-live_config_reload = true
+general.live_config_reload = true
 
 [font]
 size = 18.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "SauceCodePro Nerd Font"
 
 [window]
 decorations = "none"
