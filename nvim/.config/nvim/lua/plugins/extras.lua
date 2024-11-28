@@ -1,9 +1,5 @@
 return {
   {
-    "knubie/vim-kitty-navigator",
-    build = { "cp ./*.py ~/.config/kitty/" },
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     ft = { "css" },
     opts = {
@@ -46,57 +42,56 @@ return {
   },
   {
     "folke/which-key.nvim",
+    event = "VeryLazy",
     config = function()
       local whichkey = require('which-key')
 
-      whichkey.register({
-        f = { name = "Find" },
-        l = { name = "LSP" },
-        s = { name = "Split" },
-        c = { name = "Make" },
-        m = { name = "Markdown" },
-        h = { name = "Git" },
-        x = { name = "Trouble" },
-        y = { name = "which_key_ignore" },
-        d = { name = "which_key_ignore" },
-        t = { name = "Tabs" },
-        z = "Zen Mode",
-        ["<space>"] = "Buffers",
-        ["1"] = "which_key_ignore",
-        ["2"] = "which_key_ignore",
-        ["3"] = "which_key_ignore",
-        ["4"] = "which_key_ignore",
-        ["a"] = "which_key_ignore",
-        ["A"] = "which_key_ignore",
-      }, { prefix = "<leader>" })
+      whichkey.add({
+        { "<leader>1", hidden = true },
+        { "<leader>2", hidden = true },
+        { "<leader>3", hidden = true },
+        { "<leader>4", hidden = true },
+        { "<leader><space>", desc = "Buffers" },
+        { "<leader>A", hidden = true },
+        { "<leader>a", hidden = true },
+        { "<leader>c", group = "Make" },
+        { "<leader>d", hidden = true },
+        { "<leader>f", group = "Find" },
+        { "<leader>h", group = "Git" },
+        { "<leader>l", group = "LSP" },
+        { "<leader>m", group = "Markdown" },
+        { "<leader>s", group = "Split" },
+        { "<leader>t", group = "Tabs" },
+        { "<leader>x", group = "Trouble" },
+        { "<leader>y", hidden = true },
+        { "<leader>z", desc = "Zen Mode" },
+      })
 
-      whichkey.register({
-        l = {
-          name = "LaTeX",
-          i = "Info",
-          I = "Info Full",
-          t = "TOC Open",
-          T = "TOC Toggle",
-          q = "Log",
-          v = "View",
-          r = "Reverse Search",
-          l = "Compile",
-          L = "Compile Selected",
-          k = "Stop",
-          K = "Stop All",
-          e = "Errors",
-          o = "Compile Output",
-          g = "Status",
-          G = "Status All",
-          c = "Clean",
-          C = "Clean Full",
-          m = "Insert Mode Keymappings",
-          x = "Reload",
-          X = "Reload State",
-          s = "Toggle Main",
-          a = "Context Menu",
-        },
-      }, { prefix = "<localleader>" })
+      whichkey.add({
+        { "<localleader>l", group = "LaTeX" },
+        { "<localleader>lC", desc = "Clean Full" },
+        { "<localleader>lG", desc = "Status All" },
+        { "<localleader>lI", desc = "Info Full" },
+        { "<localleader>lK", desc = "Stop All" },
+        { "<localleader>lL", desc = "Compile Selected" },
+        { "<localleader>lT", desc = "TOC Toggle" },
+        { "<localleader>lX", desc = "Reload State" },
+        { "<localleader>la", desc = "Context Menu" },
+        { "<localleader>lc", desc = "Clean" },
+        { "<localleader>le", desc = "Errors" },
+        { "<localleader>lg", desc = "Status" },
+        { "<localleader>li", desc = "Info" },
+        { "<localleader>lk", desc = "Stop" },
+        { "<localleader>ll", desc = "Compile" },
+        { "<localleader>lm", desc = "Insert Mode Keymappings" },
+        { "<localleader>lo", desc = "Compile Output" },
+        { "<localleader>lq", desc = "Log" },
+        { "<localleader>lr", desc = "Reverse Search" },
+        { "<localleader>ls", desc = "Toggle Main" },
+        { "<localleader>lt", desc = "TOC Open" },
+        { "<localleader>lv", desc = "View" },
+        { "<localleader>lx", desc = "Reload" },
+      })
 
       whichkey.setup({
         presets = {
@@ -108,19 +103,21 @@ return {
           z = true,
           g = false,
         },
-        key_labels = {
-          ["<space>"] = "SPC",
+        icons = {
+          rules = false,
         },
-        window = {
+        win = {
           border = "rounded",
         },
         layout = {
           align = "center",
         },
-        ignore_missing = false,
+        -- ignore_missing = false,
         show_help = false,
         show_keys = true,
-        triggers = "auto",
+        triggers = {
+          { "<auto>", mode = "nixsotc" },
+        },
       })
     end,
   },
@@ -158,7 +155,7 @@ return {
   },
   {
     "Eandrju/cellular-automaton.nvim",
-    enabled = true,
+    enabled = false,
     keys = {
       { "<leader>F", "<cmd>CellularAutomaton scramble<CR>", desc = "FML" }
     },
